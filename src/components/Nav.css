@@ -1,0 +1,99 @@
+nav {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+}
+
+nav > img {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: center;
+}
+
+nav > button {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: start;
+    background: none;
+    border: none;
+}
+
+nav > ul {
+    grid-row: 2;
+    grid-column: 1;
+    position: absolute;
+    top: var(--h-header);
+    width: 200px;
+    left: -200px;
+    z-index: 10;
+    background-color: var(--clr-hl1);
+    display: flex;
+    flex-direction: column;
+    padding-block: 1rem;
+    transition: left ease-in-out 0.2s;
+}
+
+nav > ul.expanded {
+    left: 10px;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: var(--h-header);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    color: var(--clr-pri1);
+    font-weight: var(--fw-bold);
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--clr-pri2);
+}
+
+@media (min-width: 960px) {
+
+    nav {
+        padding-inline: 4rem;
+        grid-template-columns: auto auto;
+    }
+
+    nav>img {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    nav>button {
+        display: none;
+    }
+
+    nav ul {
+        grid-row: 1;
+        grid-column: 2;
+        justify-self: end;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        gap: 1rem;
+        padding-block: 0;
+    }
+
+    .overlay {
+        display: none;
+    }
+}

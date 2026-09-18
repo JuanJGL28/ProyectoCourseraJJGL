@@ -1,0 +1,239 @@
+:root {
+  --clr-pri1: #495E57;
+  --clr-pri2: #F4CE14;
+  --clr-sec1: #EE9972;
+  --clr-sec2: #FBDABB;
+  --clr-hl1: #EDEFEE;
+  --clr-hl2: #333333;
+  --clr-err: hsl(0, 100%, 40%);
+  /* Border radius */
+  --br: 16px;
+  --br-05: 8px;
+  /* Fonts */
+  --ff-1: Markazi;
+  --ff-2: Karla, sans-serif;
+  --fs-h1: 64pt;
+  --fs-h2: 40pt;
+  --fs-h3: 28pt;
+  --fs-cta: 18pt;
+  --fs-section: 18pt;
+  --fs-specials: 16pt;
+  --fs-card: 18pt;
+  --fs-p: 14pt;
+  --fw-extra-bold: 800;
+  --fw-bold: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --desktop-min: 960px;
+  --p-main-section: 2rem 4vw;
+  --w-max: 1280px;
+  --h-header: 60px;
+  --h-header-scrolled: 60px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: var(--w-max);
+  margin-inline: auto;
+  font-family: var(--ff-2);
+}
+
+h1, h2, h3 {
+  font-family: var(--ff-1);
+  font-weight: var(--fw-medium);
+}
+
+/* Display title, Markazi Text, Medium 64pt */
+h1 {
+  font-size: var(--fs-h1);
+}
+
+/* Sub title, Markazi Text, Regular 40pt */
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+/* Lead text, CTA, Karla, Medium 18pt */
+.cta-text {
+  font-size: var(--fs-cta);
+  font-weight: var(--fw-medium);
+}
+
+/* Section title, uppercase, Karla, 20pt Extra bold */
+.section-title {
+  text-transform: uppercase;
+  font-size: var(--fs-section);
+  font-weight: var(--fw-extra-bold);
+}
+
+/* Card title, Karla, 18pt Bold */
+.card-title {
+  font-size: var(--fs-card);
+  font-weight: var(--fw-bold);
+}
+
+/* Paragraph text, Karla, regular 16pt, 1.5 line height, max 65ch */
+p {
+  line-height: 1.5;
+  font-size: calc(var(--fs-p) - 2pt);
+  font-weight: var(--fw-regular);
+  max-width: 65ch
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+label {
+  padding: 0.5rem;
+  color: var(--clr-hl2);
+  font-weight: var(--fw-bold);
+  transition: background-color 0.1s;
+}
+
+button, .btn,
+input,
+select {
+  background-color: var(--clr-hl1);
+  border: 2px solid var(--clr-pri1);
+  border-radius: var(--br-05);
+}
+
+input,
+select {
+    width: 12rem;
+    height: 3rem;
+    font-family: var(--ff-2);
+}
+
+button, .btn {
+  padding: 1rem 1.5rem;
+  border-radius: var(--br);
+  color: var(--clr-hl1);
+  background-color: var(--clr-pri1);
+  font-weight: var(--fw-bold);
+  transition: text-color 0.3s, background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  color: var(--clr-pri1);
+  background-color: var(--clr-pri2);
+  cursor: pointer;
+}
+
+button:disabled, .btn:disabled {
+  color: #888888;
+  background-color: var(--clr-hl1);
+  border-color: var(--clr-hl1);
+  cursor: not-allowed;
+}
+
+.btn-alt {
+  color: var(--clr-hl2);
+  background-color: var(--clr-pri2);
+}
+.btn-alt:hover {
+  color: var(--clr-hl2);
+  background-color: var(--clr-sec1);
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  max-width: var(--w-max);
+  top: 0;
+  height: var(--h-header);
+  z-index: 100;
+  /* border-bottom: 1px solid transparent; */
+  transition: all 0.1s;
+}
+
+header.scrolled {
+  height: var(--h-header-scrolled);
+  background-color: rgba(240,240,240,0.95);
+  /* border-color: var(--clr-pri1); */
+}
+
+main {
+  /* position: relative; */
+  margin-top: var(--h-header);
+  /* margin-bottom: 60px; */
+}
+
+section {
+  padding: var(--p-main-section);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 1rem;
+}
+
+form > .form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-field > p {
+  font-size: 10pt;
+  color: var(--clr-err);
+}
+
+form button {
+  font-size: large;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --p-main-section: 4rem 8rem;
+    --h-header: 110px;
+    --h-header-scrolled: 55px;
+    --fs-p: 16pt;
+  }
+}
+/* Ajustes personales del proyecto JJGL */
+:focus-visible {
+  outline: 3px solid var(--clr-pri2);
+  outline-offset: 3px;
+}
+
+.specials-card,
+.testimonial-card {
+  box-shadow: 0 6px 18px rgba(51, 51, 51, 0.08);
+}
+
+@media (max-width: 520px) {
+  :root {
+    --fs-h1: 48pt;
+    --fs-h2: 32pt;
+  }
+
+  button,
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

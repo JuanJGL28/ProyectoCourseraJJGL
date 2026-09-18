@@ -1,0 +1,10 @@
+main > h3 {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    color: var(--clr-pri1);
+}
+
+main > h3 > svg {
+    font-size: 4rem;
+}

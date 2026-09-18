@@ -1,0 +1,7 @@
+main > h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    color: var(--clr-hl1);
+    background-color: var(--clr-pri1);
+}
